@@ -21,7 +21,7 @@ interface=$1 # the first argument should be the interface name
 APK_PATH="emki_host/build/apk"
 
 # here go the actual apps.. the path for the apks is right above here so I guess place apk there
-PACKAGES=()
+PACKAGES=(emki_host-)
 
 # add file names under gradlew
 ./gradlew \
