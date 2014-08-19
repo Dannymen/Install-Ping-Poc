@@ -2,10 +2,8 @@ Install-Ping-Poc
 ================
 #!/bin/sh
 
-# This Bash shell script isntalls both apps for CS and both apps for SIM
-# on all USB connected tablets. It scans for android devices via ADB and
-# installs the EMKI software on them
-#
+# This Bash shell script isntalls the Ping Poc app to run in conjuction with IP test
+# just does it on a large scale
 # Danny Mendoza <danny.mendoza@controlgroup.com>
 # Adapted from a script written by
 # Chris Ross <chris.ross@controlgroup.com>
