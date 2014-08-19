@@ -1,7 +1,5 @@
-Install-Ping-Poc
-================
 #!/bin/sh
-
+# This won't work until app is signed/certified
 # This Bash shell script isntalls the Ping Poc app to run in conjuction with IP test
 # just does it on a large scale
 # Danny Mendoza <danny.mendoza@controlgroup.com>
@@ -19,11 +17,11 @@ interface=$1 # the first argument should be the interface name
 APK_PATH="emki_host/build/apk"
 
 # here go the actual apps.. the path for the apks is right above here so I guess place apk there
-PACKAGES=(emki_host-app-release-unsigned.apk)
+PACKAGES=(app-release-unsigned.apk)
 
 # add file names under gradlew
-./gradlew \
-assemblePingPocApp
+# ./gradlew \
+# assemblePingPocApp
 
 
 scanDevices() {
@@ -48,8 +46,7 @@ do
   for CURRENT_PKG in "${PACKAGES[@]}"
   do
     #NOW="$APK_PATH/${PACKAGES[1]}"
-    echo "\n---Deleting old data from $CURRENT_PKG from $CURRENT_DEVICE"
-    adb -s $CURRENT_DEVICE uninstall $CURRENT_PKG
+    # Just installing because no need to remove it, it doesnt change
     echo "\n+++Installing new instance of $CURRENT_PKG on $CURRENT_DEVICE"
     adb -s $CURRENT_DEVICE install "$APK_PATH/$CURRENT_PKG"
   done
